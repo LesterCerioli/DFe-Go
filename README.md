@@ -1,20 +1,50 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Fiscal Microservices Project
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Overview
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+This project is a collection of microservices built with **Go** and the **Fiber** web framework, designed to handle various fiscal operations (e.g., tax calculations, invoicing, financial reporting). The services are containerized using **Docker** and leverage **PostgreSQL** as the relational database. The architecture follows microservices principles, allowing each service to be deployed, scaled, and managed independently.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Technologies Used
+- **Go**: Backend language for building the microservices, known for performance and simplicity.
+- **Fiber**: A high-performance web framework for Go, inspired by Express.js.
+- **Docker**: Used for containerization to ensure that each microservice can be isolated, deployed, and managed in different environments.
+- **PostgreSQL**: The relational database for persistent data storage.
+- **Docker Compose**: For managing multi-container Docker applications (used in development).
+- **Swagger**: For API documentation.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Services
+
+### 1. Tax Calculation Service
+- Handles all tax-related computations based on various fiscal rules.
+- Exposes RESTful endpoints for clients to retrieve tax details.
+
+### 2. Invoicing Service
+- Manages invoice generation, including handling different fiscal policies for invoicing.
+- Stores invoice data and provides APIs to generate and retrieve invoices.
+
+### 3. Financial Reporting Service
+- Aggregates financial data for reporting purposes.
+- Provides APIs for generating financial reports and analytics.
+
+## Project Structure
+
+```bash
+.
+├── tax-service/
+│   ├── main.go
+│   ├── Dockerfile
+│   ├── go.mod
+│   └── ...
+├── invoicing-service/
+│   ├── main.go
+│   ├── Dockerfile
+│   ├── go.mod
+│   └── ...
+├── reporting-service/
+│   ├── main.go
+│   ├── Dockerfile
+│   ├── go.mod
+│   └── ...
+├── docker-compose.yml
+├── README.md
+└── .env
