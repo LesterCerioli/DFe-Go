@@ -18,12 +18,6 @@ func NewSystemAccess(data []byte) (SystemAccess, error) {
 		return SystemAccess{}, err
 	}
 
-	if access.IsProperStr == "true" {
-		access.IsProper = true
-	} else {
-		access.IsProper = false
-	}
-
 	return access, nil
 }
 
@@ -41,6 +35,7 @@ func (s *SystemAccess) UnmarshalXML(d *xml.Decoder, start xml.StartElement) erro
 
 	s.Name = elem.Name
 	s.Address = elem.Address
+
 	s.IsProper = (elem.IsProper == "true")
 
 	if id, err := strconv.Atoi(elem.SystemId); err == nil {
