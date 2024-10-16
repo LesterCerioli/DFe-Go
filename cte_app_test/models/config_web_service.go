@@ -1,13 +1,11 @@
 package models
 
 import (
-	"CTe/Classes/Servicos/Tipos"
-	"DFe/Classes/Entidades"
-	"DFe/Classes/Flags"
+	"_/C_/Users/apoll/OneDrive/Documentos/repositories/github/DFe-Go/cte_app_test/models"
 )
 
 type ConfigWebService struct {
-	UfEmitente     Entidades.Estado
+	UfEmitente     models.State
 	Ambiente       Flags.TipoAmbiente
 	Serie          int16
 	Numeracao      int64

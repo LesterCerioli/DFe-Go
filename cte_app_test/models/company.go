@@ -2,7 +2,7 @@ package models
 
 import "encoding/json"
 
-type Empresa struct {
+type Company struct {
 	Cnpj                string `json:"cnpj"`
 	InscricaoEstadual   string `json:"inscricaoEstadual"`
 	Nome                string `json:"nome"`
@@ -14,32 +14,32 @@ type Empresa struct {
 	CodigoIbgeMunicipio int64  `json:"codigoIbgeMunicipio"`
 	NomeMunicipio       string `json:"nomeMunicipio"`
 	Cep                 string `json:"cep"`
-	SiglaUf             Estado `json:"siglaUf"`
+	SiglaUf             State  `json:"siglaUf"`
 	Telefone            string `json:"telefone"`
 	Email               string `json:"email"`
 	RNTRC               string `json:"rntrc"`
 }
 
 // Assuming Estado is an enum-like type, you might define it like this:
-type Estado string
+type State string
 
 const (
-	AC Estado = "AC"
-	AL Estado = "AL"
+	AC State = "AC"
+	AL State = "AL"
 	// ... other states ...
 )
 
 // MarshalJSON and UnmarshalJSON methods for custom JSON serialization
-func (e Empresa) MarshalJSON() ([]byte, error) {
+func (e Company) MarshalJSON() ([]byte, error) {
 	return json.Marshal(struct {
-		Empresa
+		Company
 	}{
-		Empresa: e,
+		Company: e,
 	})
 }
 
-func (e *Empresa) UnmarshalJSON(data []byte) error {
-	type Alias Empresa
+func (e *Company) UnmarshalJSON(data []byte) error {
+	type Alias Company
 	aux := &struct {
 		*Alias
 	}{

@@ -62,8 +62,3 @@ func (w *InputBoxWindow) btnOkClick() {
 func (w *InputBoxWindow) Show() {
 	w.window.ShowAndRun()
 }
-
-func main() {
-	inputBox := NewInputBoxWindow()
-	inputBox.Show()
-}
