@@ -1,4 +1,4 @@
-package informations
+package complement
 
 type ComplOs struct {
 	XCaracAd  string     `xml:"xCaracAd"`
