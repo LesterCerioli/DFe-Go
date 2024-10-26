@@ -1,7 +1,6 @@
 package enumbindable
 
 import (
-	"fmt"
 	"reflect"
 )
 
